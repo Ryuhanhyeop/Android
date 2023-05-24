@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.util.Log;
 
 //최상위 클래스, 생성자로 데이터, bitmap받아와서 저장, rect
 public class Sprite {
@@ -23,6 +24,8 @@ public class Sprite {
         bitmap = BitmapFactory.decodeResource(context.getResources(),resourceId);
         width = bitmap.getWidth();
         height = bitmap.getHeight();
+        Log.d("width", ""+width);
+        Log.d("width", ""+height);
         rect = new RectF();
     }
 
@@ -50,7 +53,7 @@ public class Sprite {
     public RectF getRect() {return rect;}
 
     public boolean checkCollision(Sprite other){
-        return RectF.intersects(this.getRect(),other.getRect());
+        return RectF.intersects(this.getRect(),other.getRect()); //사각형이 겹쳐있는지 판단하는 Rect의 메소드
         //지정된 사각형이 이 사각형과 교차하면 true반환하고 이 사각형을 해당 교차점으로 설정하고, 그렇지 않으면 false 반환
     }
 

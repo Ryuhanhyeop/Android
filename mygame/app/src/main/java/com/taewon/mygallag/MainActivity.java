@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         bgMusic.start();
+        Log.d("onResume", "onResume: ============");
         spaceInvadersView.resume();
     }
     private void init(){
@@ -142,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onMove(int angle, int strength) {
                 Log.d("angle", Integer.toString(angle));
-                Log.d("force", Integer.toString(strength));
+                Log.d("force", Integer.toString(strength)); //0~100까지
                 if(angle > 67.5 && angle < 112.5){
                     //위
                     spaceInvadersView.getPlayer().moveUp(strength/10);

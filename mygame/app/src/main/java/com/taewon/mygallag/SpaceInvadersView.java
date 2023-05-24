@@ -47,7 +47,7 @@ public class SpaceInvadersView extends SurfaceView implements Runnable, SurfaceH
         paint = new Paint();
         screenW = x;
         screenH = y; //받아온 x, y
-        src = new Rect(); //원본 사각형
+        src = new Rect();
         dst = new Rect(); //사본 사각형
         dst.set(0,0,screenW,screenH); //시작 x,y와 끝 x,y
         startGame();
@@ -139,7 +139,7 @@ public class SpaceInvadersView extends SurfaceView implements Runnable, SurfaceH
                             other.handleCollision(me);
                         }
                     }catch (Exception e){
-                        e.printStackTrace();
+                        e.printStackTrace(); //디버그용 오류정보 출력
                     }
                 }
             }
